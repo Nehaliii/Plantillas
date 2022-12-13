@@ -1,0 +1,159 @@
+<html>
+    <head>
+            
+        <title>Sign in page</title>
+            <link rel="stylesheet" type="text/css" href="main.css">
+  
+        <style>
+            .container {
+                border-radius: 5px;
+                background-color: #f4f4f4;
+                padding: 20px;
+                width: 15%;
+                margin:auto;
+                color:red;
+                border:2px solid;
+              }
+            table{height: 50%;}
+              
+    </style></head>
+    <body>
+            <ul>
+                    <li><a href="Home.html">Home</a></li>
+                    <li><a href="Paid.html">Paid</a></li>
+                    <li><a href="Free.html">Free</a></li>
+                    <li><a href="AboutUs.html">About Us</a></li>
+                    <li style="float:right;"><a href="LogIn.html">Login In</a></li>
+                    <li style="float:right;"><a href="SignIn.html">Sign In</a></li>
+            </ul>
+        </br></br>
+<div class="container">
+   <h3><center>Sign In</center> </h3>
+<form action="LogIn.html" onsubmit="return validation()" method="post">
+<table>
+<tr>
+<td>
+<label> Username: </label><br>
+<input type="text" id="user" name="username" >
+<p id="uname" style="color:red;"></p>
+</td>
+</tr>
+<tr>
+<td>
+<label> Password: </label> <br>
+<input type="password" id="pwd" name="pwd" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" title="Must contain at least one number, one uppercase, lowercase letter and at least 8 to 15 characters">    
+<p id="password" style="color:red;"></p>
+</td>
+</tr>
+<tr>
+<td>
+<label> Confirm password: </label><br>
+<input type="password" id="cpwd" name="cpass">
+<p id="cpassword" style="color:red;"></p>
+</td>
+</tr>
+<tr>
+<td>
+<label> Email: </label> <br>
+<input type="email" id="email" name="email"> 
+<p id="mail" style="color:red;"></p>
+</td>
+</tr>
+<tr>
+<td>
+<center>
+   <button type="submit">Sign In</button>
+</center>
+</td>
+</tr>
+</table>
+</form>
+</div>
+</br></br>
+<script type="text/javascript">
+        function validation()
+        {
+        var users = document.getElementById('user').value;
+        var passd = document.getElementById('pwd').value;
+        var cpassd = document.getElementById('cpwd').value;
+        var emails = document.getElementById('email').value;  
+       
+        
+        if(users == "")
+        {
+        document.getElementById('uname').innerHTML = "Please enter username";
+        return false;
+        }
+        
+        if(users.length < 2)
+        {
+        document.getElementById('uname').innerHTML = "Please enter proper username";
+        return false;
+        }
+        
+        if(!isNaN(users))
+        {
+        document.getElementById('uname').innerHTML = "Please enter characters in username";
+        return false;
+        }
+        
+        
+        if(passd == "")
+        {
+        document.getElementById('password').innerHTML = "Please enter password";
+        return false;
+        }
+        
+        if((passd.length < 7) || (passd.length > 15))
+        {
+        document.getElementById('password').innerHTML = "Password length must be betweent 8 to 15";
+        return false;
+        }
+       
+        
+        if(cpassd == "")
+        {
+        document.getElementById('cpassword').innerHTML = "Please enter confirm password";
+        return false;
+        }
+        
+        if(passd != cpassd)
+        {
+        document.getElementById('cpassword').innerHTML = "password are not matching";
+        return false;
+        }
+        
+        if(emails == "")
+        {
+        document.getElementById('mail').innerHTML = "Please enter email";
+        return false;
+        }
+        
+        if(emails.indexOf('@') <= 0)
+        {
+        document.getElementById('mail').innerHTML = "Position of @ is incorrect";
+        return false;
+        }
+        
+        if((emails.charAt(emails.length-4)!='.') && (emails.charAt(email.length-3)!='.'))
+        {
+        document.getElementById('mail').innerHTML = "Position of @ and . is invalide";
+        return false;
+        }
+        }
+        </script>
+        
+
+<div class="footer">
+        Copyright &copy; 2022 All rights reserved
+        <a href="https://www.pinterest.com.au/" class="fa fa-pinterest fa "style="float: right; padding-top:5px; padding-right:50px;"></a>
+        &nbsp &nbsp &nbsp 
+        <a href="https://www.instagram.com/" class="fa fa-instagram fa" style="float: right; padding-top:5px; padding-right:50px;"></a>
+        &nbsp &nbsp &nbsp 
+        <a href="https://twitter.com/" class="fa fa-twitter fa" style="float: right; padding-top:5px; padding-right:50px;"></a>
+        &nbsp &nbsp &nbsp 
+        <a href="https://www.facebook.com/" class="fa fa-facebook fa" style="float: right; padding-top:5px; padding-right:50px;"></a>
+
+</div>
+</body>
+</html>

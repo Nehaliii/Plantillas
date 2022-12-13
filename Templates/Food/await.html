@@ -1,0 +1,90 @@
+<html>
+    <head>
+        <style>
+          ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+            z-index: 0;
+             background-color: #6f4e37;
+          }
+          li {
+          padding: 14px 25px;
+          display: inline-block;
+          
+          }
+          a{
+           color: white;
+          text-decoration: none;
+          }
+          </style>
+<script type="text/javascript">
+
+  
+async function doPro() {
+   let promise = new Promise(function(resolve, reject) {
+   // let coupon = 0;
+    let coupon = document.getElementById('amount').value;
+
+ if (coupon == 2 || coupon == 4 || coupon == 6 ||coupon == 8 || coupon == 10 )
+ {
+ rand = Math.floor(Math.random() * 10);
+ var result = rand;
+ }
+ else if(coupon == 1 || coupon == 3 || coupon == 5 || coupon == 7 ||coupon == 9 )
+ {
+ rand = Math.floor(Math.random() * 20);
+
+ var result = rand;
+ }
+ else if(coupon == 0)
+ {
+  var result = 4 ;
+ 
+ } 
+resolve(result); //this is normally done but here it says use reject and then do step2 so used rejected 
+ //reject(dosep2(result));    
+    
+  });
+  const result = await promise; 
+     // const result = 4;
+  if (result == 1 || result == 4)
+  {
+  var amt = result * 100;
+  }
+  else
+  {
+  var amt = 1; 
+  }
+
+    console.log(`result: ${result}`);
+			alert("Your coupon amount is $" + amt);
+    
+ }
+
+
+</script>
+<body bgcolor="#C4A174">
+  <ul>
+    <li></li><li></li><li></li><li></li><li></li><li></li><li></li>
+      <li><a href="FoodOne.html">Home</a></li>
+      <li><a href="Shop.html">Shop Locations</a></li>
+      <li><a href="Coupon.html">Coupon</a></li>
+      <li><a href="pcoupon.html">PCoupon</a></li>
+      <li><a href="menu.html">Menu</a></li>
+      </ul>
+        <center>
+    <img src="coupon.jpg" height="80%" width="70%">
+  <h1 style="color:white"><u> Using Promise Async/Await</u> </h1>     
+  <form action="await.html" onsubmit="doPro()" method="post">
+  <label style="color:white"> Enter your Coupon number (0 to 10): </label><br><br>
+  <input type="number" min="0" max="10" id="amount">
+  <br><br>
+  <button type="submit">Get Coupon Amount</button>
+  </form>
+  
+  </center>
+  </body>
+  
+</html>

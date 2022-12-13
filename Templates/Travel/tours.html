@@ -1,0 +1,65 @@
+<html>
+<style>
+p{
+font-size: 150%;
+}
+h1{
+color: #00bfff;
+}
+img{
+    height:100px;
+    width: 100px;
+}
+div{
+    width:50px;
+}
+
+#divs{
+  padding-top:230px;
+  padding-left:550px;
+  font-size: 50px;
+}
+</style>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<script>
+$(document).ready(function(){
+  $("li").css({"display": "inline-block", "padding": "14px 20px"});
+  $("ul").css({"list-style-type": "none", "background-color":"#00bfff","overflow": "hidden", "padding":"0"});
+  $("a").css({"font-size": "30","color": "white","text-decoration": "none"});
+  $("#divs").hide();
+  $("#fly").hover(function(){
+    alert("Try double click on the plane");},
+    function(){
+      alert("but be carefull while mouse leave");
+    });
+  
+  $("#idst").mouseleave(function(){
+    $("#idst").animate({paddingTop: '+=400px',paddingLeft: '+=150px' },'slow'); 
+    $("#idst").hide();
+    $("#divs").show();
+      });
+
+   $("#idst").dblclick(function(){
+    var divi = $("#idst");
+    divi.animate({paddingTop: '+=400px',paddingLeft: '+=1150px' },'slow'); 
+    divi.animate({paddingTop: '-=400px',paddingLeft: '-=1150px' },'slow');
+   }); 
+});
+
+</script>
+<body>
+<ul>
+  <li><a href="Traver.html">Home</a></li>
+  <li><a href="tours.html">Tours</a><li>
+  <li><a href="Explore.html">Explore</a><li>
+  <li><a href="map.html">Map</a></li>
+  <li><a href="#Contact Us">Contact Us</a><li>
+  <li><a href="#About Us">About Us</a><li>
+  </ul>
+<div id="fly">Fly</div>
+ <img  id="idst" src="https://t4.ftcdn.net/jpg/02/74/84/83/240_F_274848331_j2f9quesTgKfuUMfIynhyk4gCgY7Ox5x.jpg">
+ <br>
+ <br>
+ <div id="divs"> CRASH </div>
+</body>
+</html>

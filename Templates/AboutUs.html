@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+    <head><script >
+            var brnCntr=0;
+            if (document.images) {
+             var banners = new Array( );
+             banners[0] = "im/hire.png";
+             banners[1] = "im/apply.png";
+         
+         }
+         function changeImage() {
+             brnCntr=brnCntr+1;
+             if (brnCntr==2) brnCntr=0;
+             document.getElementById("myimage").src=banners[brnCntr];
+             setTimeout("changeImage()",8000);
+         }
+         </script>
+         
+        <title> Home Page</title>
+        <link rel="stylesheet" type="text/css" href="main.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    </head>
+    <body onload="changeImage()">
+
+           
+
+        <div class="nav">
+            <ul>
+                    <li><a href="Home.html">Home</a></li>
+                    <li><a href="Paid.html">Paid</a></li>
+                    <li><a href="Free.html">Free</a></li>
+                    <li><a href="AboutUs.html">About Us</a></li>
+                    <li style="float:right;"><a href="LogIn.html">Login In</a></li>
+                    <li style="float:right;"><a href="SignIn.html">Sign In</a></li>
+            </ul>
+            
+
+       <table>
+           <tr><td> 
+                    <font color="red"><h2>Plantillas in Present</h2> </font>
+                    <hr>
+                Plantillas was founded in mid-December 2018 by Nehali Hingrajiya to serve as resource where they could show their results from learning web development. It started as learning experiment but soon turned into more than that.
+                    This website serves around 300,000 page views each month and most of the traffic comes from India, US, UK, Australia, Japan and Germany. Out themes are downloaded over 200,000 in less than one year and hopefully we can double this number by end of 2022 (hopefully we will remember to update this number when the time comes).
+                    Today I noticed that this section needs a massive update to included how well we were doing in 2022. We closed 2021 with 450,000 visitors on average and whooping 900,000 pageviews a month. Our themes have been downloaded over 600,000 times. We have come a long way and there is not sign for slowing down and we think that we have just started our journey.
+               </td>
+               <td>
+                    <iframe width="420" height="250" src="https://www.youtube.com/embed/2HWM75i6WxY?autoplay=1&mute=1">
+                    </iframe>
+                          
+               
+               </td>
+               </tr>
+
+               <tr>
+                   <td> 
+                   <font color="red"><h2>Plantillas in Future</h2></font> 
+                    <hr>
+                    We are looking to contribute to WordPress community by releasing free WordPress themes but you can expect from premium features and premium themes as well.
+                    This project is entirely run by one personal but currently Plantillas is seeking for someone who could to make this website even more useful for WordPress community.
+                    If you are interested in doing business with us, please contact us.<b id="shadow"><a style="color:red; font-size:x-large;" href="Apply.html" > Apply Now!</a></b></br>
+               </td>
+               <td>
+                   <center>
+                    <img src="im/apply.png"  id="myimage" height="200" width="350" 
+                    alt="apply/hire"> 
+                </center>            
+               </td>
+               </tr>
+           </table>
+</br>
+       
+</br>
+
+        </br>
+            <div class="footer">
+                        Copyright &copy; 2022 All rights reserved
+                        <a href="https://www.pinterest.com.au/" class="fa fa-pinterest fa "style="float: right; padding-top:5px; padding-right:50px;"></a>
+                        &nbsp &nbsp &nbsp 
+                        <a href="https://www.instagram.com/" class="fa fa-instagram fa" style="float: right; padding-top:5px; padding-right:50px;"></a>
+                        &nbsp &nbsp &nbsp 
+                        <a href="https://twitter.com/" class="fa fa-twitter fa" style="float: right; padding-top:5px; padding-right:50px;"></a>
+                        &nbsp &nbsp &nbsp 
+                        <a href="https://www.facebook.com/" class="fa fa-facebook fa" style="float: right; padding-top:5px; padding-right:50px;"></a>
+                
+                </div>
+           
+    </body>
+</html>

@@ -1,0 +1,124 @@
+<html>
+<style>
+p{
+font-size: 150%;
+}
+h1{
+color: #00bfff;
+}
+
+</style>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<script>
+$(document).ready(function(){
+  $("li").css({"display": "inline-block", "padding": "14px 20px"});
+  $("ul").css({"list-style-type": "none", "background-color":"#00bfff","overflow": "hidden", "padding":"0"});
+  $("a").css({"font-size": "30","color": "white","text-decoration": "none"});
+  $("p:first").css({"color":"#00bfff", "font-size": "30"});
+  $("p:first").animate({paddingLeft:"+=250px"});
+  $("p:first").animate({paddingLeft:"-=250px"});
+  $("p:first").animate({paddingLeft:"+=470px"});
+  $("h1:contains(C)").css("background-color", "black");
+  $("h1").filter(".center").css("background-color", "red");
+  $("h1.center").next().css({"border": "2px solid red"});
+  $("h1").mouseover(function(){
+    $("h1 + p").fadeToggle("slow");
+  });
+ $(function(){
+   $("img").hide().show("slow");
+ });
+});
+
+</script>
+<body>
+<ul>
+  <li><a href="#">Home</a></li>
+  <li><a href="tours.html">Tours</a><li>
+  <li><a href="Explore.html">Explore</a><li>
+  <li><a href="map.html">Map</a></li>
+  <li><a href="#Contact Us">Contact Us</a><li>
+  <li><a href="#About Us">About Us</a><li>
+  </ul>
+<p>7 Wonders of the world</p>
+<hr size="5%" align="center" color="gray" width="40%">
+<table>
+<tr>
+<td>
+<h1>Great Wall of China (China)</h1>
+<p>
+Built between the 5th century B.C. and the 16th century, the Great Wall of China is a stone-and-earth fortification created to protect the borders of the Chinese Empire from invading Mongols. The Great Wall is actually a succession of multiple walls spanning approximately 4,000 miles, making it the world's longest manmade structure.
+</p>
+</td>
+<td>
+<img src="China.jfif">
+</td>
+</tr>
+<tr>
+<td>
+<img src="Statius.jfif">
+</td>
+<td>
+<h1>Christ the Redeemer Statue (Rio de Janeiro)</h1>
+<p>
+The Art Deco-style Christ the Redeemer statue has been looming over the Brazilians from upon Corcovado mountain in an awe-inspiring state of eternal blessing since 1931. The 130-foot reinforced concrete-and-soapstone statue was designed by Heitor da Silva Costa and cost approximately $250,000 to build - much of the money was raised through donations. The statue has become an easily recognized icon for Rio and Brazil.
+</p>
+</td>
+</tr>
+<tr>
+<td>
+<h1>Machu Picchu (Peru)</h1>
+<p>
+Machu Picchu, an Incan city of sparkling granite precariously perched between 2 towering Andean peaks, is thought by scholars to have been a sacred archaeological center for the nearby Incan capital of Cusco. Built at the peak of the Incan Empire in the mid-1400s, this mountain citadel was later abandoned by the Incas. The site remained unknown except to locals until 1911, when it was rediscovered by archaeologist Hiram Bingham. The site can only be reached by foot, train or helicopter; most visitors visit by train from nearby Cusco.
+</p>
+</td>
+<td>
+<img src="micupicu.jfif">
+</td>
+</tr>
+<tr>
+<td>
+<img src="piramid.jfif">
+</td>
+<td>
+<h1 class="center">Chichen Itza (Yucatan Peninsula, Mexico)</h1>
+<p>
+The genius and adaptability of Mayan culture can be seen in the splendid ruins of Chichen Itza. This powerful city, a trading center for cloth, slaves, honey and salt, flourished from approximately 800 to 1200, and acted as the political and economic hub of the Mayan civilization. The most familiar ruin at the site is El Caracol, a sophisticated astronomical observatory.
+</p>
+</td>
+</tr>
+<tr>
+<td>
+<h1>The Roman Colosseum (Rome)</h1>
+<p>
+Rome's, if not Italy's, most enduring icon is undoubtedly its Colosseum. Built between A.D. 70 and 80 A.D., it was in use for some 500 years. The elliptical structure sat nearly 50,000 spectators, who gathered to watch the gladiatorial events as well as other public spectacles, including battle reenactments, animal hunts and executions. Earthquakes and stone-robbers have left the Colosseum in a state of ruin, but portions of the structure remain open to tourists, and its design still influences the construction of modern-day amphitheaters, some 2,000 years later.
+</p>
+</td>
+<td>
+<img src="rome.jfif">
+</td>
+</tr>
+<tr>
+<td>
+<img src="Tajmahal.jfif">
+</td>
+<td>
+<h1>Taj Mahal (Agra, India)</h1>
+<p>
+A mausoleum commissioned for the wife of Mughal Emperor Shah Jahan, the Taj Mahal was built between 1632 and 1648. Considered the most perfect specimen of Muslim art in India, the white marble structure actually represents a number of architectural styles, including Persian, Islamic, Turkish and Indian. The Taj Mahal also encompasses formal gardens of raised pathways, sunken flower beds and a linear reflecting pool.
+</p>
+</td>
+</tr>
+<tr>
+<td>
+<h1>Petra (Jordan)</h1>
+<p>
+Declared a World Heritage Site in 1985, Petra was the capital of the Nabataean empire of King Aretas IV, and likely existed in its prime from 9 B.C. to A.D. 40. The members of this civilization proved to be early experts in manipulating water technology, constructing intricate tunnels and water chambers, which helped create an pseudo-oasis. A number of incredible structures carved into stone, a 4,000-seat amphitheater and the El-Deir monastery have also helped the site earn its fame.
+</p>
+</td>
+<td>
+<img src="Pedra.jfif">
+</td>
+</tr>
+</table>
+</body>
+</html>

@@ -1,0 +1,149 @@
+<html>
+<head><style>
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  z-index: 0;
+   background-color: #6f4e37;
+}
+li {
+padding: 14px 25px;
+display: inline-block;
+
+}
+a{
+ color: white;
+text-decoration: none;
+}
+
+div{
+    margin-left: 15%;
+    margin-right: 15%;
+}
+.toggler { width: 500px; height: 200px; margin-left:30%; size: 40px; }
+  #button { padding: .5em 1em; text-decoration: none; }  
+</style>
+  <title>Coffee shop</title>
+  <link rel="stylesheet" href="//code.jquery.com/ui/1.13.2/themes/base/jquery-ui.css">
+  <link rel="stylesheet" href="/resources/demos/style.css">
+  <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
+  <script src="https://code.jquery.com/ui/1.13.2/jquery-ui.js"></script>
+  <script>
+  $( function() {
+    $( "input" ).checkboxradio();
+  } );
+
+  $( function() {
+    $( "#effect1" ).hide();
+    $( "#effect2" ).hide();
+    $( "#effect3" ).hide();
+    // run the currently selected effect
+    function runEffect() {
+
+         selected = $("input[name='location']:checked").val()
+
+        console.log(selected);
+      // get effect type from
+      var selectedEffect = "scale";
+ 
+      // Most effect types need no options passed by default
+      var options = {};
+      // some effects have required parameters
+        options = { percent: 50 };
+
+        if(selected == "syd"){  // Run the effect
+      $( "#effect1" ).show( selectedEffect, options, 3000, callback );
+       
+        }
+        if(selected == "mel"){  // Run the effect
+      $( "#effect2" ).show( selectedEffect, options, 3000, callback );       
+        }
+
+        if(selected == "per"){  // Run the effect
+      $( "#effect3" ).show( selectedEffect, options, 3000, callback );
+       
+        }
+
+    };
+ 
+    //callback function to bring a hidden box back
+    function callback() {
+      setTimeout(function() {
+        $( "#effect1:visible" ).removeAttr( "style" ).show();
+        $( "#effect2:visible" ).removeAttr( "style" ).show();
+        $( "#effect2:visible" ).removeAttr( "style" ).show(); 
+      });
+    };
+ 
+    // Set effect from select menu value
+    $( "#button" ).on( "click", function() {
+      runEffect();
+    });
+ 
+    
+  } );
+  </script>
+</head>
+<body>
+  <ul>
+    <li></li><li></li><li></li><li></li><li></li><li></li><li></li>
+      <li><a href="FoodOne.html">Home</a></li>
+      <li><a href="Shop.html">Shop Locations</a></li>
+      <li><a href="Coupon.html">Coupon</a></li>
+      <li><a href="pcoupon.html">PCoupon</a></li>
+      <li><a href="menu.html">Menu</a></li>
+      </ul>
+  <center><h1>Find shops near you</h1></center>
+<center><img height="50%" width="50%"src="main2.jpg"></center>
+
+<div class="widget">
+ 
+  <h2>Radio Group</h2>
+  <fieldset>
+    <legend>Select a Location: </legend>
+    <label for="radio-1">Sydney</label>
+    <input type="radio" class="radios" name="location" id="radio-1" value="syd">
+    <label for="radio-2">Melbourn</label>
+    <input type="radio" class="radios" name="location" id="radio-2" value="mel">
+    <label for="radio-3">perth</label>
+    <input type="radio" class="radios" name="location" id="radio-3" value="per">
+    <button id="button" style="float:right"  class="ui-state-default ui-corner-all">select</button>
+   
+</fieldset>
+  
+</div>
+
+<div class="toggler">
+    <div id="effect1" class="ui-widget-content ui-corner-all">
+      <h3 class="ui-widget-header ui-corner-all">Sydney</h3>
+      <p> Service options: Dine-in · Takeaway · No delivery <br>
+          Located in: Darling Harbour City - Harbourside<br>
+          Address: Harbourside Shopping Centre, 2-10 Darling Dr, Sydney NSW 2000<br>
+          Hours: Open 7AM ⋅ Closes 4PM <br>
+          Phone: (02) 9211 5557<br>
+      </p>
+    </div>
+    <div id="effect2" class="ui-widget-content ui-corner-all">
+        <h3 class="ui-widget-header ui-corner-all">Melbourn</h3>
+        <p>
+        Service options: Dine-in · Takeaway · No delivery<br>
+        Located in: Flinders Street Railway Station <br>
+        Address: 347 Flinders St, Melbourne VIC 3000 <br>
+        Hours: Open 9AM ⋅ Closes 11PM <br>
+        Phone: (03) 9614 8570 <br>
+        </p>
+      </div>
+      <div id="effect3" class="ui-widget-content ui-corner-all">
+        <h3 class="ui-widget-header ui-corner-all">Perth</h3>
+        <p>Service options: Dine-in · Takeaway · No delivery<br>
+            Located in: Plaza Arcade<br>
+            Address: Plaza Arcade, 13/185 Murray St, Perth WA 6000<br>
+            Hours: Open 8AM ⋅ Closes 2PM<br>
+            Phone: 0414 684 162<br>
+        </p>
+      </div>
+  </div>
+</body>
+</html>

@@ -1,0 +1,195 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Menu</title>
+  <link rel="stylesheet" href="https://code.jquery.com/ui/1.13.2/themes/base/jquery-ui.css">
+  <script src="https://code.jquery.com/jquery-3.6.1.min.js"></script>
+  <script src="https://code.jquery.com/ui/1.13.2/jquery-ui.min.js" ></script>
+  <style>
+    .custom-colorize {
+      font-size: 20px;
+      position: relative;
+      width: 300px;
+      height: 150px;
+    }
+
+    .custom-colorize-changer {
+      font-size: 10px;
+      position: absolute;
+      right: 0;
+      bottom: 0;
+    }
+      ul {
+        list-style-type: none;
+        margin: 0;
+        padding: 0;
+        overflow: hidden;
+        z-index: 0;
+         background-color: #6f4e37;
+      }
+      li {
+      padding: 14px 25px;
+      display: inline-block;
+      
+      }
+      a{
+       color: white;
+      text-decoration: none;
+      }
+      </style>
+  
+  <script>
+    $(function () {
+      // the widget definition, where "custom" is the namespace,
+      // "colorize" the widget name
+      $.widget("custom.colorize", {
+        // default options
+        options: {
+          red: 211,
+          green: 211,
+          blue: 211,
+
+          // Callbacks
+          change: null,
+          dif: null,	  
+        },
+
+        // The constructor
+        _create: function () {
+          this.element
+            // add a class for theming
+            .addClass("custom-colorize");
+
+          this.changer = $("<button>", {
+            text: "Cart",
+            "class": "custom-colorize-changer"
+          })
+            .appendTo(this.element)
+            .button();
+
+          // Bind click events on the changer button to the dif method
+          this._on(this.changer, {
+             click: "dif"
+          });
+          this._refresh();
+        },
+
+        // Called when created, and later when changing options
+        _refresh: function () {
+          this.element.css("background-color", "rgb(" +
+            this.options.red + "," +
+            this.options.green + "," +
+            this.options.blue + ")"
+          );
+
+          // Trigger a callback/event
+          this._trigger("change");
+        },
+
+        // A public method to change the color to a random value
+        // can be called directly via .colorize( "dif" )
+        dif: function () {
+          var colors = {
+            red:  143,
+            green: 98,
+            blue: 81
+          };
+            this.option(colors);
+        },
+
+
+        // Events bound via _on are removed automatically
+        // revert other modifications here
+        _destroy: function () {
+          // remove generated elements
+          this.changer.remove();
+
+          this.element
+            .removeClass("custom-colorize")
+            .enableSelection()
+            .css("background-color", "transparent");
+        },
+
+        // _setOptions is called with a hash of all options that are changing
+        // always refresh when changing options
+        _setOptions: function (arguments) {
+          this._super(arguments);
+          this._refresh();
+        }
+      });
+
+      // Initialize with default options
+      $("#my-widget1").colorize();
+	  $("#my-widget2").colorize();
+	  $("#my-widget3").colorize();
+	  $("#my-widget4").colorize();
+	  $("#my-widget5").colorize();
+	  $("#my-widget6").colorize();
+	  $("#my-widget7").colorize();
+	  $("#my-widget8").colorize();
+    });
+	 
+  </script>
+</head>
+
+<body>
+
+    <ul>
+        <li></li><li></li><li></li><li></li><li></li><li></li><li></li>
+          <li><a href="FoodOne.html">Home</a></li>
+          <li><a href="Shop.html">Shop Locations</a></li>
+          <li><a href="Coupon.html">Coupon</a></li>
+          <li><a href="pcoupon.html">PCoupon</a></li>
+          <li><a href="menu.html">Menu</a></li>
+          </ul>
+          <center><h1>What kind of Coffee we serve for you</h1></center>
+        
+<center>
+  <table border="1">
+  <tr>
+  <td>
+    <div id="my-widget1"><h3>Cappuccino $39</h3>
+Click on cart to order coffee, it will change background color.</div>
+	</td>
+	<td>
+	  <div id="my-widget2"><h3>Espresso $69</h3>
+Click on cart to order coffee, it will change background color.</div>
+	</td>
+	</tr>
+	<tr>
+	<td>
+	<div id="my-widget3"><h3>Coffee Latte $49</h3>
+Click on cart to order coffee, it will change background color.</div>
+<td>
+	<div id="my-widget4"><h3>Ristretto $59</h3>
+Click on cart to order coffee, it will change background color.</div>
+	</td>
+	</tr>
+	<tr>
+  <td>
+    <div id="my-widget5"><h3>Macchiato $49</h3>
+Click on cart to order coffee, it will change background color.</div>
+	</td>
+	<td>
+	  <div id="my-widget6"><h3>Piccolo Latte $39</h3>
+Click on cart to order coffee, it will change background color.</div>
+	</td>
+	</tr>
+	<tr>
+	<td>
+	<div id="my-widget7"><h3>Mocha $29</h3>
+Click on cart to order coffee, it will change background color.</div>
+<td>
+	<div id="my-widget8"><h3>Affogato $49</h3>
+Click on cart to order coffee, it will change backgroundcolor.</div>
+	</td>
+	</tr>  
+  </table>
+</center>
+
+</body>
+
+</html>
